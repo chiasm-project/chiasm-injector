@@ -25,6 +25,8 @@ function ChiasmInjector(chiasm){
       });
     }
   });
+  
+  return my;
 }
 
 module.exports = ChiasmInjector;
