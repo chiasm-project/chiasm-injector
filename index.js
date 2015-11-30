@@ -12,6 +12,12 @@ function ChiasmInjector(chiasm){
 
   my.when("containers", function (containers){
     if(containers !== Model.None){
+
+      // TODO un-inject previously injected components.
+      // TODO add a test for this
+      // This means remove all DOM children from each container.
+
+      // Inject the components into their specified containers.
       Object.keys(containers).forEach(function (alias){
         var selector = containers[alias];
 
@@ -25,6 +31,12 @@ function ChiasmInjector(chiasm){
       });
     }
   });
+
+  my.destroy = function (){
+    // TODO un-inject previously injected components.
+    // TODO add a test for this
+    // This means remove all DOM children from each container.
+  }
   
   return my;
 }

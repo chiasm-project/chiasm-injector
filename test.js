@@ -24,12 +24,14 @@ divA.clientHeight = 200;
 document.body.appendChild(divA);
 
 // Create a few test cases for selecting by id.
+// TODO test selection by id
 var divB = document.createElement("div");
 divB.id = "B";
 divB.clientWidth = 300;
 divB.clientHeight = 400;
 document.body.appendChild(divB);
 
+// TODO test selection by id with multiple elements
 var divC = document.createElement("div");
 divC.id = "C";
 divC.clientWidth = 500;
@@ -42,6 +44,8 @@ function DummyVisDIV(){
   my.initDIV();
   return my;
 };
+
+// TODO use this in a test, and confirm the SVG has been added to the container
 function DummyVisSVG (){
   var my = ChiasmComponent();
   my.initSVG();
@@ -84,6 +88,7 @@ describe("chiasm-layout", function () {
           done();
         }, 0);
 
+        // TODO uncomment this, implement setting of the "box" property
         //componentA.when("box", function(box){
         //  expect(box.x).to.equal(0);
         //  expect(box.y).to.equal(0);
