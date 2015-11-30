@@ -13,7 +13,15 @@ function ChiasmInjector(chiasm){
   my.when("containers", function (containers){
     if(containers !== Model.None){
       Object.keys(containers).forEach(function (alias){
-        // TODO
+        var selector = containers[alias];
+
+        chiasm.getComponent(alias).then(function (component){
+
+          document
+            .querySelector(selector)
+            .appendChild(component.el);
+
+        }, console.log);
       });
     }
   });
